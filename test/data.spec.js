@@ -1,23 +1,55 @@
-import { example, anotherExample } from '../src/data.js';
+
+import { jregion, kregion, ordenadoAZ, ordenadonumero, ordenadoZA, searchWord } from "../src/data.js";
+import { renderPokemonCard } from "../src/components.js"
 
 
-describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
+describe("Test del filtrado", () => {
+  test("Comprobar que es una función", () => {
+    expect(typeof ordenadoAZ).toBe("function")
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
+})
 
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+describe("Test del filtrado", () => {
+  test("Comprobar que es una función", () => {
+    expect(typeof ordenadoZA).toBe("function")
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+})
+
+
+describe("Test del filtrado", () => {
+  test("Comprobar que es una función", () => {
+    expect(typeof ordenadonumero).toBe("function")
   });
-});
+
+})
+
+describe("Test del filtrado", () => {
+  test("Comprobar que es una función", () => {
+    expect(typeof kregion).toBe("function")
+  });
+
+})
+
+describe("Test del filtrado", () => {
+  test("Comprobar que es una función", () => {
+    expect(typeof jregion).toBe("function")
+  });
+
+})
+
+describe("Test del filtrado", () => {
+  test("Comprobar que es una función", () => {
+    expect(typeof searchWord).toBe("function")
+  });
+
+})
+
+
+describe("Test del filtrado", () => {
+  test("Comprobar que es una función", () => {
+    expect(typeof renderPokemonCard).toBe("function")
+  });
+
+})

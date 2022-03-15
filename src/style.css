@@ -1,0 +1,1811 @@
+/* selecciona el elemento raíz de un árbol que representa el documento (pendiente de otra definición) */
+:root {
+  --clr-neon: hsl(317 100% 54%);
+  --clr-bg: hsl(323 21% 16%);
+  --clr-water: hsl(166, 89%, 52%);
+  --clr-fire: hsl(5, 82%, 53%);
+  --clr-electric: hsl(58, 100%, 50%);
+  --clr-grass: hsl(119, 81%, 56%);
+  --clr-ground: hsl(22, 91%, 51%);
+  --clr-bug: hsl(109, 95%, 66%);
+  --clr-dragon: hsl(346, 81%, 56%);
+  --clr-fairy: hsl(307, 80%, 56%);
+  --clr-ghost: hsl(227, 228%, 229%);
+  --clr-normal: hsl(194, 95%, 69%);
+  --clr-psychic: hsl(274, 91%, 54%);
+  --clr-steel: hsl(212, 37%, 51%);
+  --clr-dark: hsl(247, 5%, 36%);
+  --clr-fighting: hsl(3, 75%, 73%);
+  --clr-flying: hsl(218, 61%, 77%);
+  --clr-ice: hsl(170, 40%, 67%);
+  --clr-poison: hsl(278, 47%, 60%);
+  --clr-rock: hsl(44, 43%, 62%);
+  --clr-white: hsl(0, 0%, 0%);
+}
+
+
+/*Contenedor carrusel*/
+img {
+
+  width: 100%;
+  height: 100%;
+
+}
+
+.contenedor {
+  width: 100%;
+  position: relative;
+  height: 780px;
+}
+
+.botones {
+  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .7);
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+
+}
+
+.botones:hover {
+  cursor: pointer;
+  transform: scale(1.2, 1.2);
+}
+
+.atras {
+  left: 2%;
+  top: calc(50% -70px);
+}
+
+.adelante {
+  right: 2%;
+  top: calc(50% -70px);
+
+}
+
+
+.filter {
+  display: none;
+}
+
+/* Flex container */
+
+.flex-container {
+  display: flex;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .search-container {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  #pokemon-list {
+    align-items: center;
+    margin-left: -50%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #nav-bar-bottom-1 {
+    width: 50%;
+    font-size: 14px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 40%;
+  }
+
+}
+
+
+/*Barra principal*/
+
+.barraPrincipal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+
+/* barra de navegación */
+
+
+
+.footer-container {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.30);
+  width: 100%;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  font-size: 20px;
+  margin: 100px;
+}
+
+.buscar {
+  padding: 5px;
+}
+
+
+.nav-bar-item {
+  margin: auto;
+}
+
+#nav-bar-top {
+  display: flex;
+  margin-top: 12px;
+  margin-bottom: 12px;
+
+}
+
+.search-container {
+  left: 300px;
+  width: 240px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 40px;
+
+}
+
+#pokemonimagen {
+  text-align: center;
+  padding: 30px;
+}
+
+#loguito {
+  width: 20%;
+  height: 20%;
+}
+
+
+.search-container input {
+  display: flex;
+  width: 120%;
+  height: 95%;
+  padding: 5px;
+}
+
+.description-types {
+  display: none;
+}
+
+#nav-bar-bottom-1 {
+  width: 100%;
+  display: flex;
+  padding: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+#nav-bar-bottom-1 {
+  cursor: pointer;
+}
+
+#nav-bar-bottom-1 ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#nav-bar-bottom-1 li {
+  padding: 10px;
+
+}
+
+#nav-bar-bottom-2 {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+#nav-bar-bottom-2 {
+  cursor: pointer;
+}
+
+#nav-bar-bottom-2 ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#nav-bar-bottom-2 li {
+  padding: 10px;
+}
+
+#nav-bar-bottom-3 {
+  width: 100%;
+  display: flex;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+
+
+}
+
+
+
+#nav-bar-bottom-3 {
+  cursor: pointer;
+}
+
+#nav-bar-bottom-3 ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#nav-bar-bottom-3 li {
+  padding: 10px;
+}
+
+
+
+/* recuadro azul alrededor de los pokemones*/
+#azulneon {
+  padding: 100px;
+  border-radius: 40px;
+  background-color: transparent;
+  border: var(--clr-water) 2px solid;
+  box-shadow: inset 0 0 3em 0 var(--clr-water), 0 0 3em 0 var(--clr-water);
+
+
+}
+
+/* la caja donde estan todos los pokemones */
+.main-container {
+  padding: 100px;
+  width: 80%;
+  margin: auto;
+
+}
+
+/* donde esta nuestro logo */
+#encabezado {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: transparent;
+  position: center;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+
+
+/*logo*/
+
+
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+
+
+#AZ {
+  display: flex;
+  float: right;
+  justify-content: flex-end;
+}
+
+
+#AZ {
+  width: 100%;
+  display: flex;
+  padding: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+#AZ {
+  cursor: pointer;
+}
+
+#AZ ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#nav-bar-bottom-1 li {
+  padding: 10px;
+
+}
+
+
+
+/* barra de busqueda */
+#search {
+  width: 350px;
+  height: 60px;
+  padding: 0 60px;
+  font-size: 25px;
+  color: white;
+  outline: none;
+  border: 4px solid silver;
+  box-shadow: 0 0 0.5em 0.05em white;
+  background: transparent;
+  border-radius: 30px;
+  transition: all 0.6s ease;
+  text-shadow: 0 0 0.1em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+}
+
+#pokebolaneon {
+  width: 400%;
+  height: 400%;
+}
+
+
+/* botón (pendiente) */
+.btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 20px;
+
+
+}
+
+.buscar:hover input {
+  width: 240px;
+}
+
+/* cada uno de los pokemones (cada uno pertenece a una carta) */
+.card {
+  box-shadow: 0 0 15px 10px 0 white;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  background-color: azure;
+  margin: auto;
+  text-align: center;
+  border: var(--clr-water) 2px solid;
+  box-shadow: inset 0 0 0.4em 0 var(--clr-water), 0 0 3em 0 var(--clr-water);
+  display: grid;
+  grid-template-columns: repeat(auto-fit);
+}
+
+/* Rotación de cartas */
+.card.front {
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.card.back {
+  transform: perspective(600px) rotateY(180deg);
+  background: #ffffff;
+  padding: 15px;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+
+}
+
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+
+}
+
+/* Acaba función de cartas*/
+
+.filter {
+  display: none
+}
+
+/* cuando pasas el curso aumentas el baño */
+.card:hover {
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+/* animate box shadow on hover y sombra */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Grid of cards, todos los pokemones en general */
+#pokemon-list {
+  border-width: 4px;
+  border-style: solid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 30px;
+
+}
+
+/* Estilo para botón agua*/
+
+.neon-button-water {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-water);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 var(--clr-water), 0 0 0.5em 0 var(--clr-water);
+  position: relative;
+}
+
+/* botón de agua para crear animación */
+.neon-button-water::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-water);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  /* luz del botón*/
+  filter: blur(1em);
+  /* sombra difuminada */
+  opacity: 0.7;
+}
+
+/* segunda parte de animación */
+.neon-button-water::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-water);
+  opacity: 0;
+  background-color: var(--clr-water);
+  /* cambia el fondo del botón */
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-water:hover,
+/* pendiente botón agua*/
+.neon-button-water:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-water:hover::before,
+.neon-button-water:focus::before {
+  opacity: 1;
+}
+
+.neon-button-water:hover::after,
+.neon-button-water:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón fire*/
+
+.neon-button-fire {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-fire);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-fire), 0 0 0.5em 0 var(--clr-fire);
+  position: relative;
+}
+
+.neon-button-fire::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-fire);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-fire::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-fire);
+  opacity: 0;
+  background-color: var(--clr-fire);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-fire:hover,
+.neon-button-fire:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-fire:hover::before,
+.neon-button-fire:focus::before {
+  opacity: 1;
+}
+
+.neon-button-fire:hover::after,
+.neon-button-fire:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón electric*/
+
+.neon-button-electric {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-electric);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-electric), 0 0 0.5em 0 var(--clr-electric);
+  position: relative;
+}
+
+.neon-button-electric::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-electric);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-electric::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-electric);
+  opacity: 0;
+  background-color: var(--clr-electric);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-electric:hover,
+.neon-button-electric:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-electric:hover::before,
+.neon-button-electric:focus::before {
+  opacity: 1;
+}
+
+.neon-button-electric:hover::after,
+.neon-button-electric:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón grass*/
+
+.neon-button-grass {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-grass);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-grass), 0 0 0.5em 0 var(--clr-grass);
+  position: relative;
+}
+
+.neon-button-grass::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-grass);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-grass::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-grass);
+  opacity: 0;
+  background-color: var(--clr-grass);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-grass:hover,
+.neon-button-grass:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-grass:hover::before,
+.neon-button-grass:focus::before {
+  opacity: 1;
+}
+
+.neon-button-grass:hover::after,
+.neon-button-grass:focus::after {
+  opacity: 1;
+}
+
+
+/* Estilo para botón ground*/
+
+.neon-button-ground {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-ground);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-ground), 0 0 0.5em 0 var(--clr-ground);
+  position: relative;
+}
+
+.neon-button-ground::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-ground);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-ground::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-ground);
+  opacity: 0;
+  background-color: var(--clr-ground);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-ground:hover,
+.neon-button-ground:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-ground:hover::before,
+.neon-button-ground:focus::before {
+  opacity: 1;
+}
+
+.neon-button-ground:hover::after,
+.neon-button-ground:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón bug*/
+
+.neon-button-bug {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-bug);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-bug), 0 0 0.5em 0 var(--clr-bug);
+  position: relative;
+}
+
+.neon-button-bug::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-bug);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-bug::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-bug);
+  opacity: 0;
+  background-color: var(--clr-bug);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-bug:hover,
+.neon-button-bug:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-bug:hover::before,
+.neon-button-bug:focus::before {
+  opacity: 1;
+}
+
+.neon-button-bug:hover::after,
+.neon-button-bug:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón dragon*/
+
+.neon-button-dragon {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-dragon);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-dragon), 0 0 0.5em 0 var(--clr-dragon);
+  position: relative;
+}
+
+.neon-button-dragon::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-dragon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-dragon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-dragon);
+  opacity: 0;
+  background-color: var(--clr-dragon);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-dragon:hover,
+.neon-button-dragon:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-dragon:hover::before,
+.neon-button-dragon:focus::before {
+  opacity: 1;
+}
+
+.neon-button-dragon:hover::after,
+.neon-button-dragon:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón fairy*/
+
+.neon-button-fairy {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-fairy);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-fairy), 0 0 0.5em 0 var(--clr-fairy);
+  position: relative;
+}
+
+.neon-button-fairy::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-fairy);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-fairy::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-fairy);
+  opacity: 0;
+  background-color: var(--clr-fairy);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-fairy:hover,
+.neon-button-fairy:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-fairy:hover::before,
+.neon-button-fairy:focus::before {
+  opacity: 1;
+}
+
+.neon-button-fairy:hover::after,
+.neon-button-fairy:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón ghost*/
+
+.neon-button-ghost {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-ghost);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-ghost), 0 0 0.5em 0 var(--clr-ghost);
+  position: relative;
+}
+
+.neon-button-ghost::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-ghost);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-ghost::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-ghost);
+  opacity: 0;
+  background-color: var(--clr-ghost);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-ghost:hover,
+.neon-button-ghost:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-ghost:hover::before,
+.neon-button-ghost:focus::before {
+  opacity: 1;
+}
+
+.neon-button-ghost:hover::after,
+.neon-button-ghost:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón normal*/
+
+.neon-button-normal {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-normal);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-normal), 0 0 0.5em 0 var(--clr-normal);
+  position: relative;
+}
+
+.neon-button-normal::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-normal);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-normal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-normal);
+  opacity: 0;
+  background-color: var(--clr-normal);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-normal:hover,
+.neon-button-normal:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-normal:hover::before,
+.neon-button-normal:focus::before {
+  opacity: 1;
+}
+
+.neon-button-normal:hover::after,
+.neon-button-normal,
+:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón psychic*/
+
+.neon-button-psychic {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-psychic);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-psychic), 0 0 0.5em 0 var(--clr-psychic);
+  position: relative;
+}
+
+.neon-button-psychic::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-psychic);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-psychic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-psychic);
+  opacity: 0;
+  background-color: var(--clr-psychic);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-psychic:hover,
+.neon-button-psychic:focus {
+  color: var(--clr-br);
+  text-shadow: none;
+}
+
+.neon-button-psychic:hover::before,
+.neon-button-psychic:focus::before {
+  opacity: 1;
+}
+
+.neon-button-psychic:hover::after,
+.neon-button-psychic:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón steel*/
+
+.neon-button-steel {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-steel);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-steel), 0 0 0.5em 0 var(--clr-steel);
+  position: relative;
+}
+
+.neon-button-steel::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-steel);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-steel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-steel);
+  opacity: 0;
+  background-color: var(--clr-steel);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-steel:hover,
+.neon-button-steel:focus {
+  color: var(--clr-br);
+  text-shadow: none;
+}
+
+.neon-button-steel:hover::before,
+.neon-button-steel:focus::before {
+  opacity: 1;
+}
+
+.neon-button-steel:hover::after,
+.neon-button-steel:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón dark*/
+
+.neon-button-dark {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-ghost);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-ghost), 0 0 0.5em 0 var(--clr-ghost);
+  position: relative;
+}
+
+.neon-button-dark::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-ghost);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-dark::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-ghost);
+  opacity: 0;
+  background-color: var(--clr-ghost);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-dark:hover,
+.neon-button-dark:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-bug:hover::before,
+.neon-button-bug:focus::before {
+  opacity: 1;
+}
+
+.neon-button-dark:hover::after,
+.neon-button-dark:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón fighting*/
+
+.neon-button-fighting {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-fighting);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-fighting), 0 0 0.5em 0 var(--clr-fighting);
+  position: relative;
+}
+
+.neon-button-fighting::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-fighting);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-fighting::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-fighting);
+  opacity: 0;
+  background-color: var(--clr-fighting);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-fighting:hover,
+.neon-button-fighting:focus {
+  color: var(--clr-fighting);
+  text-shadow: none;
+}
+
+.neon-button-fighting:hover::before,
+.neon-button-fighting:focus::before {
+  opacity: 1;
+}
+
+/* Estilo para botón flying*/
+
+.neon-button-flying {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-flying);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-flying), 0 0 0.5em 0 var(--clr-flying);
+  position: relative;
+}
+
+.neon-button-flying::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-flying);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-flying::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-flying);
+  opacity: 0;
+  background-color: var(--clr-flying);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-flying:hover,
+.neon-button-flying:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-flying:hover::before,
+.neon-button-flying:focus::before {
+  opacity: 1;
+}
+
+.neon-button-flying:hover::after,
+.neon-button-flying:focus::after {
+  opacity: 1;
+}
+
+.neon-button-flying:hover::after,
+.neon-button-flying:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón ice*/
+
+.neon-button-ice {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-ice);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-ice), 0 0 0.5em 0 var(--clr-ice);
+  position: relative;
+}
+
+.neon-button-ice::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-ice);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-ice::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-ice);
+  opacity: 0;
+  background-color: var(--clr-ice);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-ice:hover,
+.neon-button-ice:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-ice:hover::before,
+.neon-button-ice:focus::before {
+  opacity: 1;
+}
+
+.neon-button-ice:hover::after,
+.neon-button-ice:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón poison*/
+
+.neon-button-poison {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-poison);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-poison), 0 0 0.5em 0 var(--clr-posion);
+  position: relative;
+}
+
+.neon-button-poison::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-poison);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-poison::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-poison);
+  opacity: 0;
+  background-color: var(--clr-poison);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-poison:hover,
+.neon-button-poison:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-poison:hover::before,
+.neon-button-poison:focus::before {
+  opacity: 1;
+}
+
+.neon-button-poison:hover::after,
+.neon-button-poison:focus::after {
+  opacity: 1;
+}
+
+/* Estilo para botón rock*/
+
+.neon-button-rock {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-rock);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-rock), 0 0 0.5em 0 var(--clr-rock);
+  position: relative;
+}
+
+.neon-button-rock::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-rock);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.neon-button-rock::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-rock);
+  opacity: 0;
+  background-color: var(--clr-rock);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button-rock:hover,
+.neon-button-rock:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.neon-button-rock:hover::before,
+.neon-button-rock:focus::before {
+  opacity: 1;
+}
+
+.neon-button-rock:hover::after,
+.neon-button-rock:focus::after {
+  opacity: 1;
+}
+
+
+/* Estilo para botones de filtro*/
+
+.btnwhite {
+  margin: auto;
+  font-size: 2rem;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--clr-ghost);
+  border: currentColor 0.05em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-ghost), 0 0 0.5em 0 var(--clr-ghost);
+  position: relative;
+}
+
+.btnwhite::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  background: var(--clr-ghost);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.btnwhite::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-ghost);
+  opacity: 0;
+  background-color: var(--clr-ghost);
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.btnwhite:hover,
+.btnwhite:focus {
+  color: var(--clr-bg);
+  text-shadow: none;
+}
+
+.btnwhite::before,
+.btnwhite:focus::before {
+  opacity: 1;
+}
+
+.btnwhite:hover::after,
+.btnwhite:focus::after {
+  opacity: 1;
+}
+
+#compare {
+
+  text-align: right;
+}
+
+/* Carrusel*/
+
+#showAndHidenBottoms {
+  background-color: black;
+  width: 100%;
+  height: 50px;
+}
+
+#showPokemon {
+  border-color: #fff;
+  margin-top: 40px;
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(88, 30, 223);
+  font-size: 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#hidePokemon {
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(236, 2, 2);
+  font-family: arial;
+  font-size: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: -48px;
+  cursor: pointer;
+}
+
+#hidePokemon,
+.login {
+  visibility: hidden;
+}
+
+.icon-filter {
+  width: 45px;
+  height: 45px;
+  padding-right: 5px;
+}
+
+.btn-general-type {
+  width: 100%;
+  height: 70%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 35px 10px 35px;
+}
+
+.title-type {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+/*Compare height*/
+
+
+.heightdiv {
+  background: red;
+}
+
+.compareheight {
+
+  position: absolute;
+  z-index: 1;
+}
+
+
+
+.heightcompare {
+  position: absolute;
+  left: 50px;
+  top: 30px;
+  display: inline-block;
+}

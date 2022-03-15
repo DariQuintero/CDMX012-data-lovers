@@ -1,12 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH5hKCA-7bvMjNN9FvZsDUokfUjDav4s3tfg&usqp=CAU">
+  <style>
+    #particles-js {
+      width:
+        100%;
+      height:
+        100%;
+      background: black;
+      position:
+        fixed;
+      z-index:
+        -1;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!--section: representa una sección generica de un documento. Sirve para determinar qué contenido corresponde a qué
+      parte de un esquema. Piensa en el esquema como en el índice de contenido de un libro; un tema común y subsecciones
+      relacionadas.-->
+  <!--fondo-->
+  <div id="particles-js"></div>
+  <script src="particles.min.js"></script>
+  <script src="particlesjs-config.json"></script>
+  <!--barra de busqueda y filtro--><a href="#nav-bar-bottom-1">
+    <div class="barraPrincipal">
+      <div class="search-container">
+        <input type="search" name="buscador" id="search" placeholder="Search by name"><img src="pokebolaneon3.png"
+          id="pokebolaneon">
+      </div><img src="logopikachu.png" id="loguito">
+      <div><button type="submit" id="compare" class="neon-button-ghost">Compare your height of a
+          pokemon</button></div>
+    </div>
+    <div id="down"><button type="submit" id="bajar" class="btnwhite e4">Bajar</button></div>
+  </a>
+  <!--cierra la parte del fondo-->
+  <div id="encabezado" class="encabezado"><a href="#azulneon">
+      <div><button type="submit" id="az" class="btnwhite  e2">AZ</button></div>
+    </a><a href="#azulneon">
+      <div><button type="submit" id="za" class="btnwhite e1">ZA</button></div>
+    </a><a href="#azulneon">
+      <div><button type="submit" id="ordenarnumero" class="btnwhite e3">Sort by number</button></div>
+    </a><a href="#azulneon">
+      <div id="region"><button type="submit" id="johto" class="btnwhite e4">Johto</button></div>
+    </a><a href="#azulneon">
+      <div id="region2"><button type="submit" id="kanto" class="btnwhite e5">Kanto</button></div>
+    </a></div>
+  <div id="showAndHidenBottoms"><button type="submit" id="showPokemon">Show the pokemon<img src="pokeballclose.png"
+        class="icon-filter" id="pokeballclose"></button><button type="submit" id="hidePokemon">Hide the pokemon<img
+        src="pokeballopen2.png" class="icon-filter" id="pokeballopen"></button></div>
+  <div class="btn-general-type hide">
+    <div class="title-type">
+      <h1>Types</h1>
+    </div>
+    <div class="description-types" id="typesPokemon"><a href="#azulneon">
+        <ul>
+          <section div id="nav-bar-bottom-1">
+            <li><button type="submit" class="btn-filter neon-button-fire" id="fire" name="fire">Fire</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-water" id="water" name="water">Water</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-bug" id="bug" name="bug">Bug</button></li>
+            <li><button type="submit" class="btn-filter neon-button-grass" id="grass" name="grass">Grass</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-dragon" id="dragon" name="dragon">Dragon</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-fairy" id="fairy" name="fairy">Fairy</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-ghost" id="ghost" name="ghost">Ghost</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-ground" id="ground" name="ground">Ground</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-normal" id="normal" name="normal">Normal</button>
+            </li>
+          </section>
+          <section div id="nav-bar-bottom-2">
+            <li><button type="submit" class="btn-filter neon-button-psychic" id="psychic"
+                name="psychic">Psychic</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-steel" id="steel" name="steel">Steel</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-dark" id="dark" name="dark">Dark</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-electric" id="electric"
+                name="electric">Electric</button></li>
+            <li><button type="submit" class="btn-filter neon-button-fighting" id="fighting"
+                name="fighting">Fighting</button></li>
+            <li><button type="submit" class="btn-filter neon-button-flying" id="flying" name="flying">Flying</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-ice" id="ice" name="ice">Ice</button></li>
+            <li><button type="submit" class="btn-filter neon-button-poison" id="poison" name="poison">Poison</button>
+            </li>
+            <li><button type="submit" class="btn-filter neon-button-rock" id="rock" name="rock">Rock</button>
+            </li>
+          </section>
+        </ul>
+      </a>
+    </div>
+    <div class="contenedor">
+      <div class="atras botones">&#60 </div>
+      <div class="adelante botones">&#62 </div><img src="img1.png" alt="" id="imagen1">
+    </div>
+    <!--barra de busqueda y filtro-->
+    <div class="main-container">
+      <!-- main container donde estan los pokemon-->
+      <div id="azulneon">
+        <!--fuera de los pokemon, la cosa azul-->
+        <div id="pokemon-list"></div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js" type="module"></script>
+  <div class="heightdiv">
+    <div class="hijo"><img src="heightcomparison4.png">/div>
+      <div class="search-container hijo"><input type="search" name="buscador" id="heightcompare"
+          placeholder="Insert your height"></div>
+    </div>
+    <div>
+      <section class="cards-containers-principal"></section>
+      <footer>
+        <script src="main.js" type="module"></script>
+</body>
+
 </html>
